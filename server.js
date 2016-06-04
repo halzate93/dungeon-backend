@@ -106,7 +106,7 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
 
-        self.routes['levels'] = levelFetcher.getLevels;
+        self.routes['/levels'] = levelFetcher.getLevels;
     };
 
 
