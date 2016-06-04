@@ -2,6 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var levelFetcher = require ("./levelFetcher.js");
 
 
 /**
@@ -104,6 +105,8 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
+        self.routes['levels'] = levelFetcher.getLevels;
     };
 
 
