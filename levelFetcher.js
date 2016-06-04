@@ -5,7 +5,7 @@ var mongoClient = require('mongodb').MongoClient
 var getLevels = function(req, res)
 {
 	mongoClient.connect(url, function(err, db) {
-		findLevels(db, "castle", function(levels){
+		findLevels(db, req.params.id, function(levels){
 			res.send(JSON.stringify(levels[0]));
 		});
 	});
